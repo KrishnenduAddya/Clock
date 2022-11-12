@@ -38,31 +38,31 @@ function renderTime(){
        let timeText = hours + ':' + minutes + ':' + seconds + ' ' + amPMText;
 
        ctx.fillStyle = 'black';
-       ctx.fillRect(0,0,1600,3000);
+       ctx.fillRect(0,0,1600,3200);
        //hour
        ctx.beginPath();
-	   ctx.arc(740,350,300,degToRad(270),degToRad((newHours*30)-90));
+	   ctx.arc(740,1550,300,degToRad(270),degToRad((newHours*30)-90));
        ctx.stroke();
        //minutes
        ctx.beginPath();
-	   ctx.arc(740,350,250,degToRad(270),degToRad((newMinutes*6)-90));
+	   ctx.arc(740,1550,250,degToRad(270),degToRad((newMinutes*6)-90));
        ctx.stroke();
        //seconds
        ctx.beginPath();
-	   ctx.arc(740,350,200,degToRad(270),degToRad((newSeconds*6)-90));
+	   ctx.arc(740,1550,200,degToRad(270),degToRad((newSeconds*6)-90));
        ctx.stroke();
        //time
        ctx.font = "60px Georgia";
        ctx.fillStyle = '#28d1fa';
-       ctx.fillText(timeText, 560, 350);
+       ctx.fillText(timeText, 560, 1550);
        //date
        ctx.font = "30px Georgia";
        ctx.fillStyle = '#28d1fa';
-       ctx.fillText(today, 635, 295);
+       ctx.fillText(today, 635, 1495);
        //name
        ctx.font = "30px Georgia";
        ctx.fillStyle = '#28d1fa';
-       ctx.fillText("Krishnendu Addya", 620, 395);
+       ctx.fillText("Krishnendu Addya", 620, 1595);
        //indices
 }
 setInterval(renderTime,10);
