@@ -23,8 +23,22 @@ function renderTime(){
        var newMinutes = minutes + (seconds/60);
        var newSeconds = seconds + (milliseconds/1000);
        
+       var amPMText = "AM";
+       if(hours > 11)
+          amPMText = "PM"
+       if(hours > 12)
+          hours = hours - 12;
+       if(hours < 10)
+          hours = "0".concat(hours);
+       if(minutes < 10)
+          minutes = "0".concat(minutes);
+       if(seconds < 10)
+          seconds = "0".concat(seconds);
+       
+       let timeText = hours + ':' + minutes + ':' + seconds + ' ' + amPMText;
+
        ctx.fillStyle = 'black';
-       ctx.fillRect(0,0,1600,800);
+       ctx.fillRect(0,0,1600,3000);
        //hour
        ctx.beginPath();
 	   ctx.arc(740,350,300,degToRad(270),degToRad((newHours*30)-90));
@@ -40,7 +54,7 @@ function renderTime(){
        //time
        ctx.font = "60px Georgia";
        ctx.fillStyle = '#28d1fa';
-       ctx.fillText(time, 580, 350);
+       ctx.fillText(timeText, 560, 350);
        //date
        ctx.font = "30px Georgia";
        ctx.fillStyle = '#28d1fa';
